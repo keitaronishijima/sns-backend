@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 mongoose
-  .connect(process.env.MONGOURL)
+  .connect(process.env.HEROKUURL)
   .then(() => {
     console.log("connecting db");
   })
@@ -30,3 +30,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.PORT || 3001, () => console.log("server started"));
+
+process.env.HEROKUURL
